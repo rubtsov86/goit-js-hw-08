@@ -3,7 +3,6 @@ import { galleryItems } from './gallery-items';
 import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
 
-// const SimpleLightbox = require("simplelightbox");
 
 // Change code below this line
 

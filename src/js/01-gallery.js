@@ -10,9 +10,9 @@ import "simplelightbox/dist/simple-lightbox.min.css";
 const divContainerRef = document.querySelector('.gallery');
 
 function createGalleryItem({ preview, original, description }) {
-    return `<li><a class="gallery__item" href="${original}">
+    return `<a class="gallery__item" href="${original}">
   <img class="gallery__image" src="${preview}" alt="${description}" />
-</a></li>`
+</a>`
 }
 
 const newGallery = galleryItems.map(item => createGalleryItem(item)).join('');

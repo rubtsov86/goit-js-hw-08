@@ -6,7 +6,7 @@
   "homepage": "https://rubtsov86.github.io/parcel",
   "scripts": {
     "dev": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /parcel-project-template/"
+    "build": "parcel build src/*.html --public-url /parcel/"
   },
   "repository": {
     "type": "git",

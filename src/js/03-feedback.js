@@ -11,20 +11,31 @@ if (localStorage.getItem(STORAGE_KEY)) {
     textareaRef.value = JSON.parse(localStorage.getItem(STORAGE_KEY)).message;
 }
 
+formRef.addEventListener('input', throttle(onTextareaInput, 500));
 formRef.addEventListener('submit', onFormSubmit);
-textareaRef.addEventListener('input', throttle(onTextareaInput, 500));
+
 
 
 
 function onFormSubmit(e) {
     e.preventDefault();
-    e.target.reset();
-    console.log(JSON.parse(localStorage.getItem(STORAGE_KEY)))
-    localStorage.removeItem(STORAGE_KEY);
+    if (!inputRef.value || !textareaRef.value) {
+        alert('все поля формы должны быть заполнены');
+        return
+    }
+    
+    resetForm(e);
+    
 }
 
 function onTextareaInput(e) {
     localStorage.setItem(STORAGE_KEY, JSON.stringify({ "email": inputRef.value, "message": textareaRef.value }));
-    // console.log(localStorage.getItem('inputData'));
+    
 }
 
+
+function resetForm(e) {
+    e.target.reset();
+    console.log(JSON.parse(localStorage.getItem(STORAGE_KEY)))
+    localStorage.removeItem(STORAGE_KEY);
+}
